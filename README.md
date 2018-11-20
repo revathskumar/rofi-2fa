@@ -35,5 +35,4 @@ npm install -g rofi-2fa
 
 License
 -------
-Please see [License](/License)
-
+Please see [License](https://github.com/revathskumar/rofi-2fa/blob/master/License)
