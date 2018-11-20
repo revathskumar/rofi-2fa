@@ -1,0 +1,27 @@
+{
+  "name": "rofi-2fa",
+  "version": "1.0.0",
+  "description": "A rofi plugin for Two-Factors Authentication / Time-Based Authentication Token / TOTP /  Google Authenticator",
+  "main": "index.js",
+  "bin": "bin/rofi-2fa",
+  "files": [
+    "License",
+    "index.js",
+    "bin/"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "totp",
+    "rofi",
+    "2fa"
+  ],
+  "author": "Revath S Kumar <rsk@revathskumar.com> (http://blog.revathskumar.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "totp-generator": "0.0.6",
+    "yaml": "^1.0.2"
+  },
+  "devDependencies": {}
+}

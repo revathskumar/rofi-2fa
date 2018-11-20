@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+
+const totpGenerator = require('..');
+const { spawnSync } = require('child_process');
+
+const generatedOtps = totpGenerator();
+
+const xdotool = spawnSync('xdotool', ['getactivewindow']);
+const activeWindow = xdotool.stdout.toString();
+
+const rofi = spawnSync('rofi', ['-dmenu', '-p', '2fa'], {input: generatedOtps});
+
+if (rofi.status === 1) {
+  process.exit();
+}
+
+const selectedOption = rofi.stdout.toString();
+
+if (selectedOption.indexOf(' :: ') === -1) {
+  process.exit();
+}
+
+const otp = selectedOption.split(' :: ')[1];
+
+if (!otp) {
+  process.exit();
+}
+
+spawnSync('sleep', ['0.5']);
+spawnSync('xdotool', ['windowactivate', activeWindow]);
+spawnSync('xdotool', ['type', otp]);
