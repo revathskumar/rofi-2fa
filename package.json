@@ -23,7 +23,5 @@
     "totp-generator": "0.0.6",
     "yaml": "^1.0.2"
   },
-  "devDependencies": {
-    "pkg": "^4.3.4"
-  }
+  "devDependencies": {}
 }
